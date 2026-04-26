@@ -2,14 +2,11 @@ FROM ubuntu:20.04                                                    # Use the o
 
 RUN apt-get update && apt-get install -y nginx                       # Update the package list and install Nginx
 
-
 RUN rm -f /var/www/html/index.nginx-debian.html                      # Remove the default Nginx index.html file
-
 
 EXPOSE 80                                                                     # Copy custom static files or configuration (optional)
                                                                               # COPY ./index.html /var/www/html/
                                                                               # Expose port 80 to allow web traffic
-
 CMD ["nginx", "-g", "daemon off;"]                                            # Start Nginx in the foreground
 
 
